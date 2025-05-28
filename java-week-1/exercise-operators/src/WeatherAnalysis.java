@@ -4,8 +4,10 @@ public class WeatherAnalysis {
         boolean isRaining = false;
         int windSpeedKmh = 10;
 
-
         double temperatureFahrenheit = (temperatureCelsius*(9/5)) + 32;
 
+        temperatureCelsius += 5;
+        windSpeedKmh =+ 5;
+        
     }
 }
