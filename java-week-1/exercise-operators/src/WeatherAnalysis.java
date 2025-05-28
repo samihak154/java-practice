@@ -11,5 +11,9 @@ public class WeatherAnalysis {
 
         boolean highTemp = temperatureFahrenheit > 85.0;
         boolean highWindSpeed = windSpeedKmh > 20;
+
+        boolean goodWeather = !isRaining && temperatureFahrenheit >= 60.0 && temperatureFahrenheit <= 85.0;
+        boolean weatherWarning = windSpeedKmh > 30 | temperatureFahrenheit <= 0.0;
+
     }
 }
