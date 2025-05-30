@@ -8,4 +8,8 @@ public class Car {
         this.model = model;
         this.year = year;
     }
+
+    public void displayInfo(String prefix) {
+        System.out.println(prefix + brand + " " + model + " (" + year + ")");
+    }
 }
