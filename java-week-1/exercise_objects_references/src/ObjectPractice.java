@@ -7,11 +7,17 @@ public class ObjectPractice {
         car1.displayInfo("Car 1: ");
         car2.displayInfo("Car 2: ");
         // Part 2: Book Library System
-//        Book book1 = new Book("The Hobbit", "J.R.R. Tolkien");
-//        book1.displayStatus();
-//        System.out.println("Borrowing the book...");
-//        book1.borrowBook();
-//        book1.displayStatus();
+        Book book1 = new Book("The Hobbit", "J.R.R. Tolkien");
+        Book book2 = new Book("Homo Deus", "Yuval Noah Harari");
+        System.out.println("\n");
+        book1.displayStatus();
+        System.out.println("Borrowing the book...");
+        book1.borrowBook();
+        book1.displayStatus();
+        book2.displayStatus();
+        System.out.println("Borrowing the book...");
+        book2.borrowBook();
+        book2.displayStatus();
 //        // Part 3: Shared Account Reference
 //        BankAccount acc1 = new BankAccount("Alice", 1000.0);
 //        BankAccount acc2 = acc1; // Reference copy
