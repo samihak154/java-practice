@@ -6,6 +6,7 @@ public class ShoppingCartApp {
         double productCost = 2.56;
         double productPrice = 4.99;
         int productQuantity = 78;
+        
 
         System.out.println("Welcome to the shopping cart app!");
         System.out.println("---------------------------------");
