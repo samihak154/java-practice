@@ -14,15 +14,17 @@ public class Main {
         String productName = io.nextLine();
 
         System.out.print("How many would you like?\n");
-        String quantity = io.nextLine();
+        String inputQuantity = io.nextLine();
+        double quantity = Double.parseDouble(inputQuantity);
 
         System.out.print("What is the unit price?\n");
-        String unitPrice = io.nextLine();
+        String inputUnitPrice = io.nextLine();
+        double unitPrice = Double.parseDouble(inputUnitPrice);
 
         // 3. Calculate total price
-//            ○ Subtotal = Quantity * Unit Price
-//            ○ Tax (7%) = Subtotal * 0.07
-//            ○ Grand Total = Subtotal + Tax
+        double productSubtotal = quantity * unitPrice;
+        double productTax = productSubtotal * 0.07;
+        double productGrandTotal = productSubtotal + productTax;
 
         // 4. Print a formatted receipt
     }
