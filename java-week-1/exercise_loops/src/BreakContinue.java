@@ -1,12 +1,3 @@
-/*Skip Negative Numbers (Continue Statement)
-    ● Ask the user to enter numbers.
-    ● If the number is negative, skip it using continue.
-    ● Stop asking if they enter 0.
-Find the First Prime Number (Break Statement)
-    ● Ask the user for a range (e.g., 1-100).
-    ● Use a for loop to find the first prime number in that range.
-    ● Stop checking once you find the first prime number.*/
-
 import java.util.Scanner;
 
 public class BreakContinue {
