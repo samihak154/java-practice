@@ -45,8 +45,8 @@ public class Main {
                     IO.displayResult(accessResult);
                     break;
                 case "3":
-                    // placeholder till releaseLocker() method is written
-                    System.out.println("Feature coming soon!\n");
+                    Result releaseResult = service.releaseLocker();
+                    IO.displayResult(releaseResult);
                     break;
                 default:
                     System.out.println("Exiting locker manager.\n");
