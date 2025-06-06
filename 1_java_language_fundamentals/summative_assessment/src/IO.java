@@ -31,6 +31,12 @@ public class IO {
         return inputPin;
     }
 
+    public static boolean getConfirmation() {
+        System.out.print("Are you sure? (Y/N): ");
+        String inputConfirmation = io.nextLine().toLowerCase().strip();
+        return inputConfirmation.equals("y") || inputConfirmation.equals("yes");
+    }
+
     public static void displayResult(Result r) {
         System.out.println(r.getMessage());
     }
