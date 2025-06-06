@@ -38,10 +38,9 @@ public class LockerService {
 
     public Result accessLocker() {
         // access the locker based on user input from methods in IO class
-        int userLocker = IO.getInputLocker();
-        String userPin = IO.getInputPin();
 
         // Validate locker number range
+        int userLocker = IO.getInputLocker();
         if (userLocker < 1 || userLocker > lockers.length) {
             return new Result(false, "Error: Invalid locker number.");
         }
@@ -53,6 +52,7 @@ public class LockerService {
         }
         // if user input of pin number matches
         // print true, Access granted or something similar
+        String userPin = IO.getInputPin();
         if (locker.getPinNumber().equals(userPin)) {
             return new Result(true, "Access granted! You may open your locker.");
         } else {
@@ -60,5 +60,8 @@ public class LockerService {
             return new Result(false, "Error: PIN number is incorrect. Please try again.");
         }
     }
+//    public Result releaseLocker() {
+//        // release the locker given locker number and pin
+//    }
 }
 
