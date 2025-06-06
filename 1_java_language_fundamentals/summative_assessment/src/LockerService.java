@@ -33,7 +33,7 @@ public class LockerService {
                                                         "\nAnd here is your pinNumber: " + pinNumber + "\n");
             }
         }
-        return new Result(false, "Sorry, all lockers are full!");
+        return new Result(false, "Sorry, all lockers are full!\n");
     }
 
     public Result accessLocker() {
@@ -42,26 +42,51 @@ public class LockerService {
         // Validate locker number range
         int userLocker = IO.getInputLocker();
         if (userLocker < 1 || userLocker > lockers.length) {
-            return new Result(false, "Error: Invalid locker number.");
+            return new Result(false, "Error: Invalid locker number.\n");
         }
         // get locker and store it in a variable
         Locker locker = lockers[userLocker - 1];
         if (locker.getPinNumber() == null) {
             // if locker isn't rented
-            return new Result(false, "Error: Locker hasn't been rented yet.");
+            return new Result(false, "Error: Locker hasn't been rented yet.\n");
         }
         // if user input of pin number matches
         // print true, Access granted or something similar
         String userPin = IO.getInputPin();
-        if (locker.getPinNumber().equals(userPin)) {
-            return new Result(true, "Access granted! You may open your locker.");
+        if (!locker.getPinNumber().equals(userPin)) {
+            return new Result(false, "Error: PIN number is incorrect. Please try again.\n");
         } else {
             // otherwise print false, Error: pin number is incorrect!
-            return new Result(false, "Error: PIN number is incorrect. Please try again.");
+            return new Result(true, "Access granted! You may open your locker.\n");
         }
     }
-//    public Result releaseLocker() {
-//        // release the locker given locker number and pin
-//    }
+
+    public Result releaseLocker() {
+        // release the locker given locker number and pin
+
+        // Validate locker number range
+        int userLocker = IO.getInputLocker();
+        if (userLocker < 1 || userLocker > lockers.length) {
+            return new Result(false, "Error: Invalid locker number.\n");
+        }
+        // get locker and store it in a variable
+        Locker locker = lockers[userLocker - 1];
+        if (locker.getPinNumber() == null) {
+            // if locker isn't rented
+            return new Result(false, "Error: Locker hasn't been rented yet.\n");
+        }
+        String userPin = IO.getInputPin();
+        // if user input of pin number matches confirm with: “Are you sure?” (Yes/No)
+        if (!locker.getPinNumber().equals(userPin)) {
+            // otherwise print false, Error: pin number is incorrect!
+            return new Result(false, "Error: PIN number is incorrect. Please try again.\n");
+        } else if (!IO.getConfirmation()) {
+            return new Result(false, "Release cancelled.\n");
+        } else {
+            // Clear data from array if confirmed
+            locker.setPinNumber(null);
+            return new Result(true, "Your locker has been released!\n");
+        }
+    }
 }
 
