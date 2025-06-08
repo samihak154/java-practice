@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class IO {
@@ -16,14 +15,8 @@ public class IO {
     }
 
     public static String getMenuChoice() {
-        while (true) {
-            try {
-                String inputMenuChoice = io.nextLine();
-                return inputMenuChoice;
-            } catch (NumberFormatException ex) {
-                System.out.println("Error: Please enter a number (1-3).");
-            }
-        }
+        String inputMenuChoice = io.nextLine();
+        return inputMenuChoice;
     }
 
     public static int getInputLocker() {
