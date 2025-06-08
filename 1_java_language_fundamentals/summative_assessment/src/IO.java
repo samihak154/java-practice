@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class IO {
@@ -15,20 +16,37 @@ public class IO {
     }
 
     public static String getMenuChoice() {
-        String inputMenuChoice = io.nextLine();
-        return inputMenuChoice;
+        while (true) {
+            try {
+                String inputMenuChoice = io.nextLine();
+                return inputMenuChoice;
+            } catch (NumberFormatException ex) {
+                System.out.println("Error: Please enter a number (1-3).");
+            }
+        }
     }
 
     public static int getInputLocker() {
-        System.out.print("Enter locker number: ");
-        int inputLocker = Integer.parseInt(io.nextLine());
-        return inputLocker;
+        while (true) {
+            try {
+                System.out.print("Enter locker number: ");
+                int inputLocker = Integer.parseInt(io.nextLine());
+                return inputLocker;
+            } catch (NumberFormatException ex) {
+                System.out.println("Error: Please enter a valid number.");
+            }
+        }
     }
 
     public static String getInputPin() {
-        System.out.print("Enter pin number: ");
-        String inputPin = io.nextLine();
-        return inputPin;
+        while (true) {
+            System.out.print("Enter pin number: ");
+            String inputPin = io.nextLine();
+            if (inputPin.matches("\\d{4}")) {
+                return inputPin;
+            }
+            System.out.println("Error: PIN must be 4 digits.");
+        }
     }
 
     public static boolean getConfirmation() {
