@@ -3,6 +3,7 @@ import java.util.Random;
 
 public class LockerService {
     private Locker[] lockers;
+    private Locker validatedLocker;
 
     //Constructor
     public LockerService (int numberofLockers) {
@@ -15,20 +16,16 @@ public class LockerService {
 
     private String generateRandomPin() {
         Random rand = new Random();
-        return String.format("%04d", rand.nextInt(10000));  // 4-digit PIN with leading zeros
+        return String.format("%04d", rand.nextInt(10000));
     }
 
     public Result rentLocker() {
-        // find an available locker, if pin number is null then locker is available
         for (int i = 0; i < lockers.length; i++) {
             if (lockers[i].getPinNumber() == null) {
-                // Generate a random pinNumber
                 String pinNumber = generateRandomPin();
-                // Assign the pinNumber to an empty locker
                 lockers[i].setPinNumber(pinNumber);
                 int lockerNumber = i + 1;
                 lockers[i].setLockerNumber(lockerNumber);
-                // Success message
                 return new Result(true, "You have rented a locker, your locker number: " + lockerNumber +
                                                         "\nAnd here is your pinNumber: " + pinNumber + "\n");
             }
@@ -37,56 +34,41 @@ public class LockerService {
     }
 
     public Result accessLocker() {
-        // access the locker based on user input from methods in IO class
-
-        // Validate locker number range
-        int userLocker = IO.getInputLocker();
-        if (userLocker < 1 || userLocker > lockers.length) {
-            return new Result(false, "Error: Invalid locker number.\n");
+        Result validation = getValidation();
+        if (!validation.getSuccess()) {
+            return validation;
         }
-        // get locker and store it in a variable
-        Locker locker = lockers[userLocker - 1];
-        if (locker.getPinNumber() == null) {
-            // if locker isn't rented
-            return new Result(false, "Error: Locker hasn't been rented yet.\n");
-        }
-        // if user input of pin number matches
-        // print true, Access granted or something similar
-        String userPin = IO.getInputPin();
-        if (!locker.getPinNumber().equals(userPin)) {
-            return new Result(false, "Error: PIN number is incorrect. Please try again.\n");
-        } else {
-            // otherwise print false, Error: pin number is incorrect!
-            return new Result(true, "Access granted! You may open your locker.\n");
-        }
+        return new Result(true, "Access granted! You may open your locker.\n");
     }
 
     public Result releaseLocker() {
-        // release the locker given locker number and pin
+        Result validation = getValidation();
+        if (!validation.getSuccess()) {
+            return validation;
+        } else if (!IO.getConfirmation()) {
+            return new Result(false, "Release cancelled.\n");
+        } else {
+            validatedLocker.setPinNumber(null);
+            return new Result(true, "Your locker has been released!\n");
+        }
+    }
 
-        // Validate locker number range
+    public Result getValidation() {
         int userLocker = IO.getInputLocker();
         if (userLocker < 1 || userLocker > lockers.length) {
             return new Result(false, "Error: Invalid locker number.\n");
         }
-        // get locker and store it in a variable
         Locker locker = lockers[userLocker - 1];
         if (locker.getPinNumber() == null) {
-            // if locker isn't rented
             return new Result(false, "Error: Locker hasn't been rented yet.\n");
         }
         String userPin = IO.getInputPin();
-        // if user input of pin number matches confirm with: “Are you sure?” (Yes/No)
         if (!locker.getPinNumber().equals(userPin)) {
-            // otherwise print false, Error: pin number is incorrect!
             return new Result(false, "Error: PIN number is incorrect. Please try again.\n");
-        } else if (!IO.getConfirmation()) {
-            return new Result(false, "Release cancelled.\n");
-        } else {
-            // Clear data from array if confirmed
-            locker.setPinNumber(null);
-            return new Result(true, "Your locker has been released!\n");
         }
+        validatedLocker = locker;
+        return new Result(true, "");
     }
 }
+
 
