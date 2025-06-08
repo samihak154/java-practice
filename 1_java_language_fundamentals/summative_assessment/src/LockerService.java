@@ -19,6 +19,23 @@ public class LockerService {
         return String.format("%04d", rand.nextInt(10000));
     }
 
+    public Result getValidation() {
+        int userLocker = IO.getInputLocker();
+        if (userLocker < 1 || userLocker > lockers.length) {
+            return new Result(false, "Error: Invalid locker number.\n");
+        }
+        Locker locker = lockers[userLocker - 1];
+        if (locker.getPinNumber() == null) {
+            return new Result(false, "Error: Locker hasn't been rented yet.\n");
+        }
+        String userPin = IO.getInputPin();
+        if (!locker.getPinNumber().equals(userPin)) {
+            return new Result(false, "Error: PIN number is incorrect. Please try again.\n");
+        }
+        validatedLocker = locker;
+        return new Result(true, "");
+    }
+
     public Result rentLocker() {
         for (int i = 0; i < lockers.length; i++) {
             if (lockers[i].getPinNumber() == null) {
@@ -53,22 +70,6 @@ public class LockerService {
         }
     }
 
-    public Result getValidation() {
-        int userLocker = IO.getInputLocker();
-        if (userLocker < 1 || userLocker > lockers.length) {
-            return new Result(false, "Error: Invalid locker number.\n");
-        }
-        Locker locker = lockers[userLocker - 1];
-        if (locker.getPinNumber() == null) {
-            return new Result(false, "Error: Locker hasn't been rented yet.\n");
-        }
-        String userPin = IO.getInputPin();
-        if (!locker.getPinNumber().equals(userPin)) {
-            return new Result(false, "Error: PIN number is incorrect. Please try again.\n");
-        }
-        validatedLocker = locker;
-        return new Result(true, "");
-    }
 }
 
 
