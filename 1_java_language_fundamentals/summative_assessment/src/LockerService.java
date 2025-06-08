@@ -19,6 +19,19 @@ public class LockerService {
         return String.format("%04d", rand.nextInt(10000));
     }
 
+    private int findLockerIndex() {
+        for (int i = 0; i < lockers.length; i++) {
+            if (lockers[i].getPinNumber() == null) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public boolean lockersAvailable() {
+        return findLockerIndex() != -1;
+    }
+
     public Result getValidation() {
         int userLocker = IO.getInputLocker();
         if (userLocker < 1 || userLocker > lockers.length) {
@@ -37,15 +50,14 @@ public class LockerService {
     }
 
     public Result rentLocker() {
-        for (int i = 0; i < lockers.length; i++) {
-            if (lockers[i].getPinNumber() == null) {
-                String pinNumber = generateRandomPin();
-                lockers[i].setPinNumber(pinNumber);
-                int lockerNumber = i + 1;
-                lockers[i].setLockerNumber(lockerNumber);
-                return new Result(true, "You have rented a locker, your locker number: " + lockerNumber +
-                                                        "\nAnd here is your pinNumber: " + pinNumber + "\n");
-            }
+        int availableIndex = findLockerIndex();
+        if (availableIndex != -1) {
+            String pinNumber = generateRandomPin();
+            lockers[availableIndex].setPinNumber(pinNumber);
+            int lockerNumber = availableIndex + 1;
+            lockers[availableIndex].setLockerNumber(lockerNumber);
+            return new Result(true, "You have rented a locker, your locker number: " + lockerNumber +
+                    "\nAnd here is your pinNumber: " + pinNumber + "\n");
         }
         return new Result(false, "Sorry, all lockers are full!\n");
     }
