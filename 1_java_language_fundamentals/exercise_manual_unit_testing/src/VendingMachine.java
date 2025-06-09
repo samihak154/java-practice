@@ -10,18 +10,18 @@ public class VendingMachine {
                            "\n----------------------");
 
         Scanner io = new Scanner(System.in);
-        String userChoice = io.nextLine().toLowerCase();
+        String userChoice = io.nextLine();
 
         System.out.println("\n");
-        System.out.println(selectDrink(userChoice));
+        System.out.println(selectDrink(userChoice, true));
         System.out.println("\n");
 
         runTests();
 
     }
 
-    public static String selectDrink(String choice) {
-        switch (choice.toLowerCase()) {
+    public static String selectDrink(String choice, boolean showDebug) {
+        switch (choice) {
             case "water":
                 return "You selected Water";
             case "soda":
@@ -34,31 +34,24 @@ public class VendingMachine {
     }
 
     public static void runTests() {
-        // Test "water"
-        String test1 = selectDrink("water");
-        System.out.print("Testing with water... ");
-        if (test1.equals("You selected Water")) {
-            System.out.println("Passed!");
-        } else {
-            System.out.println("Failed!");
-        }
+        String[] inputs = {"water", "soda", "juice", "WATER", "Tea", ""};
+        String[] expected = {
+                "You selected Water",
+                "You selected Soda",
+                "You selected Juice",
+                "You selected Water",
+                "Invalid selection",
+                "Invalid selection"
+        };
 
-        // Test "soda"
-        String test2 = selectDrink("soda");
-        System.out.print("Testing with soda... ");
-        if (test2.equals("You selected Soda")) {
-            System.out.println("Passed!");
-        } else {
-            System.out.println("Failed!");
-        }
-
-        // Test "juice"
-        String test3 = selectDrink("juice");
-        System.out.print("Testing with juice... ");
-        if (test3.equals("You selected Juice")) {
-            System.out.println("Passed!");
-        } else {
-            System.out.println("Failed!");
+        for (int i = 0; i < inputs.length; i++) {
+            System.out.print("Testing with " + inputs[i] + "... ");
+            String actual = selectDrink(inputs[i], false); // false = no debug
+            if (expected[i].equals(actual)) {
+                System.out.println("Passed!");
+            } else {
+                System.out.println("FAIL: Expected '" + expected[i] + "', got '" + actual + "'");
+            }
         }
     }
 }
