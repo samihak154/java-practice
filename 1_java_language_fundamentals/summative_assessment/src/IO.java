@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class IO {
     private static Scanner io = new Scanner(System.in);
 
-    public static void displayMenu() {
+    public static void displayMenu(boolean lockerAvailable) {
         String menu = "What would you like to do next?\n" +
                 " 1. Rent a Locker\n" +
                 " 2. Access a Locker\n" +
@@ -11,7 +11,15 @@ public class IO {
                 " Any other key to exit.\n" +
                 "==================================\n" +
                 "Enter your choice: ";
-        System.out.print(menu);
+        String rentLocker = " 1. Rent a Locker\n";
+        String rentLockerUpdated = " 1. Rent a Locker - Currently Unavailable (Lockers are full)\n";
+        String fullLockersMenu = menu.replace(rentLocker, rentLockerUpdated);
+
+        if (!lockerAvailable) {
+            System.out.print(fullLockersMenu);
+        } else {
+            System.out.print(menu);
+        }
     }
 
     public static String getMenuChoice() {
@@ -35,10 +43,13 @@ public class IO {
         while (true) {
             System.out.print("Enter pin number: ");
             String inputPin = io.nextLine();
-            if (inputPin.matches("\\d{4}")) {
+            if (!inputPin.matches("\\d+")) {
+                System.out.println("Error: PIN must only contain numbers 0-9.");
+            } else if (inputPin.length() != 4) {
+                System.out.println("Error: PIN must be 4 digits.");
+            } else {
                 return inputPin;
             }
-            System.out.println("Error: PIN must be 4 digits.");
         }
     }
 
