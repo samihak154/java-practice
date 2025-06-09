@@ -21,14 +21,23 @@ public class VendingMachine {
     }
 
     public static String selectDrink(String choice, boolean showDebug) {
-        switch (choice) {
+        if (showDebug) {
+            System.out.println("Received input: " + choice);
+            System.out.println("Lowercased input: " + choice.toLowerCase());
+        }
+
+        switch (choice.toLowerCase()) {
             case "water":
+                if (showDebug) System.out.println("Selected: Water");
                 return "You selected Water";
             case "soda":
+                if (showDebug) System.out.println("Selected: Soda");
                 return "You selected Soda";
             case "juice":
+                if (showDebug) System.out.println("Selected: Juice");
                 return "You selected Juice";
             default:
+                if (showDebug) System.out.println("Invalid selection detected");
                 return "Invalid selection";
         }
     }
