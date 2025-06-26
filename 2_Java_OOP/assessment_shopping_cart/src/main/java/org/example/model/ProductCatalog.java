@@ -20,6 +20,6 @@ public class ProductCatalog {
     }
 
     public List<Product> getCopyOfAllProducts() {
-        return Collections.unmodifiableList(catalog);
+        return new ArrayList<>(catalog);
     }
 }
