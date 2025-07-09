@@ -1,0 +1,7 @@
+FlightNumber,DateTime,Destination,TicketPrice,PassengerName,PassportNumber,AircraftModel,AircraftType
+
+UA520,2025-07-09,Paris,1050.00,SAMIHA KHALED,A00008562,Boeing 787,CommercialAircraft
+UA520,2025-07-09,Paris,1050.00,HECTOR FERNANDEZ,A00006283,Boeing 787,CommercialAircraft
+AA240,2025-10-23,Lima,704.00,SHAILA AHMED,A00009072,Boeing 777,CommercialAircraft
+AA240,2025-10-23,Lima,704.00,NAWAR AHMED,A00004939,Boeing 777,CommercialAircraft
+PV621,2025-07-28,Cancun,4600.00,LORD PUMBINGTON,A00007802,Gulfstream G650,PrivateJet

@@ -1,0 +1,9 @@
+FlightNumber,DateTime,Destination,TicketPrice,PassengerName,PassportNumber,AircraftModel,AircraftType
+
+UA520,2025-07-09,Paris,1050.00,HECTOR FERNANDEZ,A00006283,Boeing 787,CommercialAircraft
+PV621,2025-07-28,Cancun,4600.00,LORD PUMBINGTON,A00007802,Gulfstream G650,PrivateJet
+UA520,2025-07-09,Paris,1050.00,SAMIHA KHALED,A00008562,Boeing 787,CommercialAircraft
+
+
+
+
