@@ -1,0 +1,6 @@
+ProductID,ProductName,Category,Quantity,Price,ProductType,StorageTemp,UnitOfMeasure
+00009,Cat litter,Pets,25,9.13,REGULAR,,1
+00002,Large brown eggs,Dairy,50,5.68,PERISHABLE,REFRIGERATED,
+00001,Wheat bread,Bakery & bread,40,2.33,PERISHABLE,ROOM-TEMP,
+00007,Trash bags,Everyday essentials,47,12.36,REGULAR,,80 count
+00005,Chicken breast,Meat & seafood,20,11.00,PERISHABLE,REFRIGERATED,

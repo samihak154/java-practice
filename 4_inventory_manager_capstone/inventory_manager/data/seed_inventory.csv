@@ -1,0 +1,6 @@
+ProductID,ProductName,Category,Quantity,Price,ProductType,StorageTemp,UnitOfMeasure
+00001,Wheat bread,Dry grocery,50,2.79,PERISHABLE,Room temperature,
+00002,Whole milk,Dairy,50,2.89,PERISHABLE,Refrigerated,
+00003,Butter,Dairy,50,2.56,PERISHABLE,Refrigerated,
+00004,Toilet paper,Everyday essentials,50,22.82,REGULAR,,24 rolls
+00005,Trash bag,Everyday essentials,50,12.97,REGULAR,,80 count
