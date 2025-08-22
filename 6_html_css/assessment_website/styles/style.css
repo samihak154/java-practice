@@ -1,0 +1,503 @@
+/* CSS Variables for Images */
+:root {
+    --banner-image: url('../images/banner_img.jpg');
+    --brunch-image: url('../images/brunch_menu_img.jpg');
+    --lunch-image: url('../images/lunch_menu_img.jpg');
+    --drinks-image: url('../images/drink_menu_img.jpg');
+    --primary-color: #6e4d38;
+    --secondary-color: #ccaf95 ;
+    --tertiary-color: #6b7551;
+}
+
+body {
+    font-family: 'Lora', serif;
+}
+
+p, li, td, th, .card-text, label, input, textarea, select, button {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300; 
+}
+
+/* Use Lora for all titles and navigation */
+h1, h2, h3, h4, h5, h6, .card-title, nav a {
+    font-family: 'Lora', serif;
+}
+
+
+.bg-custom-primary {
+    background-color: var(--primary-color);
+}
+
+/* Navbar Section */
+.navbar-brand {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 2rem;
+    font-family: 'Lora', serif;
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    font-family: 'Lora', serif;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--tertiary-color);
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.93) !important;
+    box-shadow: none;
+}
+
+.navbar-logo {
+    height: 2.5rem; 
+    width: auto;
+    margin-right: 0.2rem; 
+}
+
+/* Main Content */
+main {
+    margin-top: 0; 
+}
+
+.py-5 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+
+/* Banner Image Section */
+#banner {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 80px; 
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Welcome Text Section */
+#welcome-text {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#welcome-text h2 {
+    color: white;
+    font-size: 6rem;
+    font-weight: 400; 
+    font-family: 'Allison', serif;
+}
+
+#welcome-text .lead {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-weight: 300; 
+}
+
+.welcome-hours {
+    margin-top: 4.5rem;
+    margin-bottom: 4.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* Add this line */
+}
+
+.hours-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 0.5rem;
+    margin-top: 2.5rem;
+    font-family: 'Lora', serif;
+    text-align: center; /* Add this line */
+}
+
+.hours-title:first-child {
+    margin-top: 0;
+}
+
+.hours-time {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    font-weight: 300;
+    text-align: center; /* Add this line */
+}
+
+/* Menu Section Custom Styling */
+#menu-highlights h2 {
+    color: var(--primary-color);
+    font-weight: 400; 
+    font-size: 2.5rem;
+}
+
+#menu-highlights .container {
+    max-width: 1200px;
+}
+
+@media (min-width: 992px) {
+    #menu-highlights .row {
+        display: flex;
+        flex-wrap: nowrap; 
+    }
+    
+    #menu-highlights .col-lg-4 {
+        flex: 0 0 33.333333%; 
+        max-width: 33.333333%;
+    }
+}
+
+.menu-category {
+    transition: transform 0.3s ease;
+    border-radius: 0.5rem !important;
+    overflow: hidden;
+    border: none;
+    margin: 0 auto;
+    max-width: 350px;
+}
+
+/* Menu Card Colors */
+#menu-highlights .col-lg-4:nth-child(1) .menu-category {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#menu-highlights .col-lg-4:nth-child(1) .card-title {
+    color: white;
+    margin-bottom: 2rem;
+}
+
+#menu-highlights .col-lg-4:nth-child(1) .card-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#menu-highlights .col-lg-4:nth-child(2) .menu-category {
+    background-color: #7a8065;
+    color: white;
+}
+
+#menu-highlights .col-lg-4:nth-child(2) .card-title {
+    color: white;
+    margin-bottom: 2rem;
+}
+
+#menu-highlights .col-lg-4:nth-child(2) .card-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#menu-highlights .col-lg-4:nth-child(3) .menu-category {
+    background-color: #ccaf95;
+    color: white;
+}
+
+#menu-highlights .col-lg-4:nth-child(3) .card-title {
+    color: white;
+    margin-bottom: 2rem;
+}
+
+#menu-highlights .col-lg-4:nth-child(3) .card-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.menu-category:hover {
+    transform: translateY(-5px);
+}
+
+.menu-category-image {
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+    height: 12.5rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.menu-category .card-body {
+    padding: 3rem 2.5rem; 
+}
+
+.brunch-image {
+    background-image: var(--brunch-image);
+}
+
+.lunch-image {
+    background-image: var(--lunch-image);
+}
+
+.drinks-image {
+    background-image: var(--drinks-image);
+}
+
+/* Locations Section */
+#locations h2 {
+    font-weight: 400; /* Medium weight */
+    font-size: 2.5rem;
+}
+
+.location-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.location-item h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-weight: 500; 
+}
+
+/* Quick Info Section */
+#quick-info h2 {
+    color: var(--primary-color);
+    font-weight: 400; /* Medium weight */
+    font-size: 2.5rem;
+}
+
+/* About Page Styles */
+
+/* Our Story Section */
+#our-story {
+    margin-top: 80px; 
+    background-color: white !important;
+    padding: 0 !important;
+}
+
+#our-story h2 {
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0;
+    padding: 2rem 0;
+    background-color: white !important;
+}
+
+#our-story .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    background-color: white !important;
+}
+
+#our-story .py-4 {
+    background-color: white !important;
+    padding: 0 !important;
+}
+
+#our-story .row {
+    margin: 0 !important;
+    background-color: var(--primary-color) !important;
+    min-height: 70vh;
+    align-items: stretch !important;
+}
+
+#our-story .col-lg-6:first-child {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#our-story .col-lg-6:last-child {
+    padding: 5rem 4rem 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--primary-color) !important;
+}
+
+#our-story img {
+    height: 100% !important;
+    min-height: 70vh !important;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0 !important;
+    display: block;
+}
+
+#our-story .story-title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Lora', serif;
+}
+
+#our-story p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+}
+
+/* Mission Section */
+#mission h2 {
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+/* Mission Cards with Different Colors */
+.mission-card {
+    transition: transform 0.3s ease;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    max-width: 350px;
+}
+
+.mission-card .card-body {
+    padding: 3rem 2.5rem;
+}
+
+.mission-card .card-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.mission-card .card-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Brown Card */
+.mission-brown {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.mission-brown .card-title {
+    color: white;
+}
+
+.mission-brown .card-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Olive Green Card */
+.mission-green {
+    background-color: #7a8065;
+    color: white;
+}
+
+.mission-green .card-title {
+    color: white;
+}
+
+.mission-green .card-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Cream Card */
+.mission-cream {
+    background-color: #ccaf95;
+    color: white;
+}
+
+.mission-cream .card-title {
+    color: white;
+}
+
+.mission-cream .card-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Contact Page Styles */
+
+/* Main Contact Section */
+#main-contact {
+    margin-top: 80px;
+}
+
+#main-contact h2 {
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+/* Location titles */
+.location-title {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Form Styling */
+.form-label {
+    font-weight: 500;
+    color: #333;
+}
+
+.form-control, .form-select {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 12px 15px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(139, 90, 60, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--tertiary-color);
+    border-color: var(--tertiary-color);
+    padding: 12px 30px;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #7a4a32;
+    border-color: #7a4a32;
+}
+
+/* Additional Contact Section */
+#additional-contact h2 {
+    color: white;
+    font-weight: 400;
+    font-size: 2.5rem;
+    margin-bottom: 4rem !important;
+}
+
+#additional-contact h4 {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+#additional-contact p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 0.5rem;
+    filter: brightness(0) saturate(100%) invert(100%); 
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    filter: brightness(0) saturate(100%) invert(87%) sepia(30%) saturate(300%) hue-rotate(15deg) brightness(1.3); 
+}
+

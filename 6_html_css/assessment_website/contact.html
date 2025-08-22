@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sunny Side Bistro</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@300;400;500;600;700&family=Meow+Script&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Sunny Side Bistro Logo" class="navbar-logo">
+                Sunny Side Bistro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <!-- Main Contact Section - Side by Side -->
+        <section id="main-contact" class="py-6 bg-light">
+            <div class="container py-5">
+                <div class="row">
+                    <!-- Contact Form Section -->
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <h2 class="mb-4">Get In Touch</h2>
+                        <p class="mb-4">Have a question, want to make a reservation, or just want to say hello? We'd love to hear from you!</p>
+                        
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number (Optional)</label>
+                                <input type="tel" class="form-control" id="phone" name="phone">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="location" class="form-label">Which Location?</label>
+                                <select class="form-select" id="location" name="location">
+                                    <option value="">Select a location</option>
+                                    <option value="downtown">Downtown Austin</option>
+                                    <option value="south">South Austin</option>
+                                    <option value="cedar-park">Cedar Park</option>
+                                    <option value="general">General Inquiry</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <select class="form-select" id="subject" name="subject">
+                                    <option value="">What can we help with?</option>
+                                    <option value="reservation">Reservation</option>
+                                    <option value="catering">Catering Inquiry</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="employment">Employment</option>
+                                    <option value="media">Media/Press</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Visit Our Locations Section -->
+                    <div class="col-lg-6">
+                        <div class="ps-lg-5">
+                            <h2 class="mb-4">Visit Our Locations</h2>
+                            
+                            <div class="mb-4">
+                                <h4 class="location-title mb-3">Downtown Austin (Main Location)</h4>
+                                <p class="mb-2"><strong>Address:</strong><br>
+                                123 Main Street<br>
+                                Downtown District<br>
+                                Austin, TX 78701</p>
+                                
+                                <p class="mb-2"><strong>Phone:</strong> (512) 555-0123<br>
+                                <strong>Email:</strong> downtown@sunnysidebistro.com</p>
+                                
+                                <p class="mb-4"><strong>Hours:</strong><br>
+                                Tuesday - Friday: 11 AM - 9 PM<br>
+                                Saturday - Sunday: 9 AM - 9 PM<br>
+                                Monday: Closed</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="location-title mb-3">South Austin</h4>
+                                <p class="mb-2"><strong>Address:</strong><br>
+                                456 South Lamar Blvd<br>
+                                South Austin<br>
+                                Austin, TX 78704</p>
+                                
+                                <p class="mb-2"><strong>Phone:</strong> (512) 555-0456<br>
+                                <strong>Email:</strong> south@sunnysidebistro.com</p>
+                                
+                                <p class="mb-4"><strong>Hours:</strong><br>
+                                Tuesday - Friday: 11 AM - 9 PM<br>
+                                Saturday - Sunday: 9 AM - 9 PM<br>
+                                Monday: Closed</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="location-title mb-3">Cedar Park</h4>
+                                <p class="mb-2"><strong>Address:</strong><br>
+                                789 Discovery Blvd<br>
+                                Cedar Park<br>
+                                TX 78613</p>
+                                
+                                <p class="mb-2"><strong>Phone:</strong> (512) 555-0789<br>
+                                <strong>Email:</strong> cedarpark@sunnysidebistro.com</p>
+                                
+                                <p class="mb-0"><strong>Hours:</strong><br>
+                                Tuesday - Friday: 11 AM - 9 PM<br>
+                                Saturday - Sunday: 9 AM - 9 PM<br>
+                                Monday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Additional Contact Methods Section -->
+        <section id="additional-contact" class="py-6 bg-custom-primary text-white" style="background-color: var(--primary-color) !important;">
+            <div class="container py-5">
+                <h2 class="text-center mb-6">Other Ways to Reach Us</h2>
+                
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="text-center">
+                            <h4 class="mb-3">General Information</h4>
+                            <p><strong>Email:</strong> info@sunnysidebistro.com<br>
+                            <strong>Phone:</strong> (512) 555-0100</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="text-center">
+                            <h4 class="mb-3">Catering & Private Events</h4>
+                            <p><strong>Email:</strong> catering@sunnysidebistro.com<br>
+                            <strong>Phone:</strong> (512) 555-0200</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="text-center">
+                            <h4 class="mb-3">Follow Us</h4>
+                            <p class="mb-4">Follow us for updates and specials:</p>
+                            <div class="social-icons">
+                                <img src="images/facebook.png" alt="Facebook" class="social-icon">
+                                <img src="images/instagram.png" alt="Instagram" class="social-icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-1">&copy; 2025 Sunny Side Bistro. All rights reserved.</p>
+            <p class="mb-0">Follow us on social media for daily specials and updates!</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
